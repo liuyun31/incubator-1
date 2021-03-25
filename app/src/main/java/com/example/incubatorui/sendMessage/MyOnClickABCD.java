@@ -68,7 +68,7 @@ public class MyOnClickABCD implements View.OnClickListener {
 
                                 if(applicationUtil.getTcpSendIs()){
                                     switch (id){
-                                        case R.id.a1 :  xz =5001 ; yz = 44461;
+                                        case R.id.a1 :  xz =57333  ; yz = 118275 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -120,7 +120,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.a2 : xz = 8142; yz = 44461;
+                                        case R.id.a2 : xz = 87199 ; yz = 118275 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -172,7 +172,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.a3 : xz = 11284; yz = 44461;
+                                        case R.id.a3 : xz = 117065 ; yz = 118275;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -224,7 +224,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.a4 : xz = 14426; yz = 44461;
+                                        case R.id.a4 : xz = 146931; yz = 118275;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -276,7 +276,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.a5 : xz = 17567; yz = 44461;
+                                        case R.id.a5 : xz = 176797 ; yz = 118275;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -328,7 +328,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.a6 : xz = 20709; yz = 44461;
+                                        case R.id.a6 : xz = 206663; yz = 118275;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -380,7 +380,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.b1 : xz =5001 ; yz = 32978;
+                                        case R.id.b1 : xz =57333  ; yz = 88425 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -432,7 +432,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.b2 : xz = 8142; yz = 32978;
+                                        case R.id.b2 : xz = 87199 ; yz = 88425 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -484,7 +484,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.b3 : xz = 11284; yz = 32978;
+                                        case R.id.b3 : xz = 117065 ; yz = 88425 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -536,7 +536,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.b4 : xz = 14426; yz = 32978;
+                                        case R.id.b4 : xz = 146931; yz = 88425 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -588,7 +588,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.b5 : xz = 17567; yz = 32978;
+                                        case R.id.b5 : xz = 176797 ; yz = 88425 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -640,7 +640,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.b6 : xz = 20709; yz = 32978;
+                                        case R.id.b6 : xz = 206663; yz = 88425 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -692,7 +692,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.c1 : xz = 5001; yz = 21496;
+                                        case R.id.c1 : xz = 57333 ; yz = 58575;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -744,7 +744,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.c2 : xz = 8142; yz = 21496;
+                                        case R.id.c2 : xz = 87199 ; yz = 58575;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -796,7 +796,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.c3 : xz = 11284; yz = 21496;
+                                        case R.id.c3 : xz = 117065 ; yz = 58575;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -848,7 +848,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.c4 : xz = 11426; yz = 21496;
+                                        case R.id.c4 : xz = 11426; yz = 58575;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -900,7 +900,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.c5 : xz = 17567; yz = 21496;
+                                        case R.id.c5 : xz = 176797 ; yz = 58575;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -952,7 +952,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.c6 : xz = 20709; yz = 21496;
+                                        case R.id.c6 : xz = 206663; yz = 58575;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -1004,7 +1004,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.d1 : xz = 5001; yz = 10013;
+                                        case R.id.d1 : xz = 57333 ; yz = 28725 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -1056,7 +1056,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.d2 : xz = 8142; yz = 10013;
+                                        case R.id.d2 : xz = 87199 ; yz = 28725 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -1108,7 +1108,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.d3 : xz = 11284; yz = 10013;
+                                        case R.id.d3 : xz = 117065 ; yz = 28725 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -1160,7 +1160,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.d4 : xz = 14426; yz = 10013;
+                                        case R.id.d4 : xz = 146931; yz = 28725 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -1212,7 +1212,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.d5 : xz = 17567; yz = 10013;
+                                        case R.id.d5 : xz = 176797 ; yz = 28725 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
@@ -1264,7 +1264,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                     }
                                                 }
                                             }break;
-                                        case R.id.d6 : xz = 20709; yz = 10013;
+                                        case R.id.d6 : xz = 206663; yz = 28725 ;
                                             if(xz - x>0){
                                                 xb = xz - x;
                                                 xf = 1;
