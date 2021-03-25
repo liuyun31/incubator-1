@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorAccent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/doodle_title_bar_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <cn.forward.androids.views.MaskImageView
+            android:id="@+id/doodle_btn_back"
+            android:layout_width="@dimen/doodle_title_bar_height"
+            android:layout_height="match_parent"
+            android:onClick="onClick"
+            android:scaleType="centerInside"
+            android:src="@drawable/doodle_btn_back"
+            android:visibility="visible"
+            app:miv_is_ignore_alpha="true"
+            app:miv_mask_color="#a8a8a8" />
+
+        <FrameLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:background="#101010" />
+
+        <cn.forward.androids.views.STextView
+            android:id="@+id/doodle_txt_title"
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/doodle_app_name"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            app:stv_text_color_pressed="#aaffffff" />
+
+        <FrameLayout
+            android:id="@+id/size_container"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/doodle_seekbar_size"
+                android:layout_width="150dp"
+                android:layout_height="33dp"
+                android:layout_gravity="bottom"
+                android:max="100"
+                android:maxHeight="33dp"
+                android:minHeight="33dp"
+                android:progressDrawable="@drawable/doodle_seekbar_bg"
+                android:thumb="@drawable/doodle_thumb_seekbarr"
+                android:thumbOffset="0dp" />
+
+            <TextView
+                android:id="@+id/paint_size_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#88444444"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btn_undo"
+                android:layout_width="@dimen/doodle_btn_pen_size"
+                android:layout_height="@dimen/doodle_btn_pen_size"
+                android:background="@drawable/doodle_btn_effect_round"
+                android:onClick="onClick"
+                android:scaleType="centerInside"
+                android:src="@drawable/doodle_ic_undo_white" />
+
+
+            <ImageView
+                android:id="@+id/btn_redo"
+                android:layout_width="@dimen/doodle_btn_pen_size"
+                android:layout_height="@dimen/doodle_btn_pen_size"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/doodle_btn_effect_round"
+                android:onClick="onClick"
+                android:scaleType="centerInside"
+                android:scaleX="-1"
+                android:src="@drawable/doodle_ic_undo_white"
+
+                tools:visibility="visible" />
+        </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/doodle_btn_brush_edit"
+                android:layout_width="@dimen/doodle_btn_pen_size"
+                android:layout_height="@dimen/doodle_btn_pen_size"
+                android:layout_marginRight="20dp"
+
+                android:background="@drawable/doodle_btn_effect_round"
+                android:onClick="onClick"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+
+                android:src="@drawable/doodle_ic_move_write"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/btn_zoomer"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:background="@drawable/doodle_btn_effect_round"
+                android:onClick="onClick"
+                android:scaleType="centerInside"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/doodle_ic_zoomer_write" />
+
+
+
+        <cn.forward.androids.views.MaskImageView
+            android:id="@+id/doodle_btn_rotate"
+            android:layout_width="@dimen/doodle_title_bar_height"
+            android:layout_height="@dimen/doodle_title_bar_height"
+            android:onClick="onClick"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/doodle_rotate"
+            android:textSize="20dp"
+            app:miv_is_ignore_alpha="true"
+            app:miv_mask_color="#a8a8a8" />
+
+        <cn.forward.androids.views.MaskImageView
+            android:id="@+id/doodle_btn_hide_panel"
+            android:layout_width="@dimen/doodle_title_bar_height"
+            android:layout_height="@dimen/doodle_title_bar_height"
+            android:onClick="onClick"
+            android:padding="13dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/doodle_btn_effect_panel"
+            android:visibility="visible"
+            app:miv_is_ignore_alpha="true"
+            app:miv_mask_color="#a8a8a8" />
+
+        <cn.forward.androids.views.MaskImageView
+            android:id="@+id/doodle_btn_finish"
+            android:layout_width="@dimen/doodle_title_bar_height"
+            android:layout_height="match_parent"
+            android:onClick="onClick"
+            android:scaleType="centerCrop"
+            android:src="@drawable/doodle_btn_finish"
+            android:visibility="visible"
+            app:miv_is_ignore_alpha="true"
+            app:miv_mask_color="#a8a8a8" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrintscreenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrint"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+
+
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutbottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+
+            <LinearLayout
+                android:id="@+id/CropImageViewLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.example.incubatorui.imageCrop.view.CropImageView
+                    android:id="@+id/CropImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:scaleType="center" />
+
+                <LinearLayout
+                    android:id="@+id/container_advanced_doodle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/doodleImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/back"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <Button
+                    android:id="@+id/cropping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_25"
+                    android:textColor="@color/black_bai"
+                    android:background="@drawable/button_circle_shape"
+                    android:onClick="cropping"
+
+
+                    android:text="裁剪" />
+
+
+
+                <Button
+                    android:id="@+id/brush"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_25"
+                    android:textColor="@color/black_bai"
+                    android:onClick="brush"
+                    android:background="@drawable/button_circle_shape"
+                    android:text="编辑" />
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_25"
+                    android:textColor="@color/black_bai"
+                    android:background="@drawable/button_circle_shape"
+                    android:onClick="saveImg"
+                    android:text="保存" />
+                <Button
+                    android:id="@+id/back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_25"
+                    android:textColor="@color/black_bai"
+                    android:background="@drawable/button_circle_shape"
+                    android:onClick="back"
+                    android:text="返回" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

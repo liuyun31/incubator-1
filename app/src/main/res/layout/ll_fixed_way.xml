@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llFixedWay"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:ignore="MissingDefaultResource">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:textSize="@dimen/dp_18"
+        android:text="请选择设置方式">
+    </TextView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp_20">
+        <Button
+            android:id="@+id/btnRelativeCoordinates"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textColor="@color/black_bai"
+            android:background="@drawable/button_circle_shape"
+            android:text="相对坐标" />
+        <Button
+            android:id="@+id/btnAbsoluteCoordinates"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textColor="@color/black_bai"
+            android:background="@drawable/button_circle_shape"
+            android:text="绝对坐标" />
+    </LinearLayout>
+</LinearLayout>
+

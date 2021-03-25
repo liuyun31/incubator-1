@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SiteSelection">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/boder"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txt_XCoordinate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:textSize="18dp"
+                        android:text="X"
+                        ></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/boder"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txt_YCoordinate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:textSize="18dp"
+                        android:text="Y"
+                        ></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/boder"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txt_ZCoordinate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:textSize="18dp"
+                        android:text="Z"
+                        ></TextView>
+                </LinearLayout>
+            </LinearLayout>
+<!--    原点按钮布局        -->
+            <LinearLayout
+                android:id="@+id/activity_OriginControl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone">
+                <Button
+                    android:id="@+id/btn_XZero"
+                    android:layout_width="@dimen/dp_150"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:layout_marginBottom="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="@color/black_bai"
+                    android:background="@drawable/button_circle_shape"
+                    android:text="X轴归零" />
+
+                <Button
+                    android:id="@+id/btn_YZero"
+                    android:layout_width="@dimen/dp_150"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:layout_marginBottom="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="@color/black_bai"
+                    android:background="@drawable/button_circle_shape"
+                    android:text="Y轴归零" />
+                <Button
+                    android:id="@+id/btn_ZZero"
+                    android:layout_width="@dimen/dp_150"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:layout_marginBottom="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="@color/black_bai"
+                    android:background="@drawable/button_circle_shape"
+                    android:text="Z轴归零" />
+                <Button
+                    android:id="@+id/btn_filterZero"
+                    android:layout_width="@dimen/dp_150"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:layout_marginBottom="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="@color/black_bai"
+                    android:background="@drawable/button_circle_shape"
+                    android:text="滤光片归零" />
+            </LinearLayout>
+
+<!--    定点按钮，选择定位方式布局        -->
+            <include android:id="@+id/activity_llFixedWay"
+                android:visibility="gone"
+                layout="@layout/ll_fixed_way">
+            </include>
+<!--    绝对定位布局        -->
+            <include android:id="@+id/activity_absolute_coordinate_setting"
+                android:visibility="gone"
+                layout="@layout/absolute_coordinate_setting">
+            </include>
+<!--    相对位置布局        -->
+            <include android:id="@+id/activity_relative_coordinate_setting"
+                android:visibility="gone"
+                layout="@layout/relative_coordinate_setting">
+            </include>
+<!--    调焦按钮     -->
+            <include android:id="@+id/activity_focal_setting"
+                android:visibility="gone"
+                layout="@layout/focal_setting">
+            </include>
+<!--    培养皿布局         -->
+            <include android:id="@+id/siteSelect"
+                android:visibility="visible"
+                layout="@layout/site_selection_layout">
+            </include>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomLinearLayout"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当前区域"
+                android:textSize="@dimen/dp_16">
+
+            </TextView>
+            <TextView
+                android:id="@+id/txt_coordinate_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A1"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:textSize="@dimen/dp_20">
+
+            </TextView>
+            <Button
+                android:id="@+id/btn_refresh"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@drawable/ic_refresh"
+                android:gravity="center"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/dp_4"
+                android:paddingBottom="@dimen/dp_4"
+
+                android:text="刷新"
+                android:textSize="@dimen/dp_10">
+
+            </Button>
+            <Button
+                android:id="@+id/btn_Origin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textColor="@color/black_bai"
+                android:background="@drawable/button_circle_shape"
+                android:text="归零设置" />
+
+            <Button
+                android:id="@+id/btn_Fixed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dp_6"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textColor="@color/black_bai"
+                android:background="@drawable/button_circle_shape"
+                android:text="坐标定点"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btn_focal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dp_6"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textColor="@color/black_bai"
+                android:background="@drawable/button_circle_shape"
+                android:text="调整焦距" />
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:layout_marginBottom="@dimen/dp_7"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textColor="@color/black_bai"
+                android:background="@drawable/button_circle_shape"
+                android:onClick="back"
+                android:text="返回" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

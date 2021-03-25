@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.doodle" >
+    <application
+        >
+        <activity android:name=".DoodleActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|orientation|keyboardHidden|navigation|keyboard"
+            />
+    </application>
+</manifest>

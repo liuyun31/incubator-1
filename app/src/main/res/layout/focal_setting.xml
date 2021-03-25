@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_25"
+            android:text="调整焦距"
+            android:textSize="@dimen/dp_30">
+
+        </TextView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="绝对位置: "
+                android:textSize="@dimen/dp_20">
+            </TextView>
+            <EditText
+                android:id="@+id/edit_focal_absolute_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入目的坐标">
+            </EditText>
+            <Button
+                android:id="@+id/btn_focal_absolute_setting"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="@dimen/dp_38"
+                android:layout_marginLeft="@dimen/dp_38"
+                android:textColor="@color/black_bai"
+                android:background="@drawable/button_circle_shape"
+                android:text="确定">
+            </Button>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="相对位置: "
+                android:textSize="@dimen/dp_20">
+            </TextView>
+            <EditText
+                android:id="@+id/edit_focal_relative_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入步数">
+            </EditText>
+            <RadioGroup
+                android:id="@+id/radioGroup_focal_relative_setting"
+                android:layout_width="@dimen/dp_180"
+                android:layout_height="@dimen/dp_40"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radioBtnZo"
+                    android:checked="true"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40">
+
+                </RadioButton>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="正向"
+                    android:textSize="@dimen/dp_18">
+                </TextView>
+                <RadioButton
+                    android:id="@+id/radioBtnZt"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40">
+
+                </RadioButton>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="反向"
+                    android:textSize="@dimen/dp_18">
+                </TextView>
+            </RadioGroup>
+            <Button
+                android:id="@+id/btn_focal_relative_setting"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="@dimen/dp_38"
+                android:textColor="@color/black_bai"
+                android:background="@drawable/button_circle_shape"
+                android:text="确定">
+            </Button>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

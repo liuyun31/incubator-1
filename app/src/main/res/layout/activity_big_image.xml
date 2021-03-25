@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BigImage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="@dimen/dp_50"
+                android:onClick="breturn"
+                android:textColor="@color/black_bai"
+                android:background="@drawable/button_circle_shape"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:text="返回"
+                android:textSize="@dimen/dp_10">
+
+            </Button>
+            <Button
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="@dimen/dp_50"
+                android:onClick="EditImage"
+                android:textColor="@color/black_bai"
+                android:background="@drawable/button_circle_shape"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:text="编辑"
+                android:textSize="@dimen/dp_10">
+
+            </Button>
+            <Button
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="@dimen/dp_50"
+                android:onClick="bdelete"
+                android:textColor="@color/black_bai"
+                android:background="@drawable/button_circle_shape"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:text="删除"
+                android:textSize="@dimen/dp_10">
+
+            </Button>
+        </LinearLayout>
+
+
+        <com.example.incubatorui.BigImageUilts.PhotoView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/pv_showbigger">
+
+
+        </com.example.incubatorui.BigImageUilts.PhotoView>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

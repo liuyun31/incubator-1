@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/absolute_coordinate_setting"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:ignore="MissingDefaultResource">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_45"
+        android:text="绝对坐标设置"
+        android:textSize="@dimen/dp_25">
+
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp_22"
+            android:text="X轴 : ">
+
+        </TextView>
+        <EditText
+            android:id="@+id/editTxtAbsoluteX"
+            android:layout_width="@dimen/dp_130"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginRight="@dimen/dp_40"
+            android:hint="x轴绝对坐标">
+
+        </EditText>
+        <TextView
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp_22"
+            android:text="Y轴 : ">
+        </TextView>
+        <EditText
+            android:id="@+id/editTxtAbsoluteY"
+            android:layout_width="@dimen/dp_130"
+            android:layout_height="@dimen/dp_50"
+            android:hint="Y轴绝对坐标">
+
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_absolute_submit"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_40"
+
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textColor="@color/black_bai"
+            android:background="@drawable/button_circle_shape"
+            android:text="确定" />
+        <Button
+            android:id="@+id/btn_absolute_cancel"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_40"
+
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textColor="@color/black_bai"
+            android:background="@drawable/button_circle_shape"
+            android:text="取消" />
+    </LinearLayout>
+</LinearLayout>

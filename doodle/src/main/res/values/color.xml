@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="doodle_btn_pressed_color">#ffffd943</color>
+    <color name="doodle_btn_border">#2483D8</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#2483D8</color>
+    <color name="colorPrint">#A4ACB8</color>
+    <color name="black_bai">#ffffff</color>
+    <color name="black_overlay">#66000000</color>
+</resources>

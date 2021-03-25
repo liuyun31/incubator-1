@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">incubatorDemo</string>
+
+    <string name="ipAddr">IP/域名</string>
+    <string name="portNumber">端 口 号</string>
+    <string name="actionLink">开始连接</string>
+
+    <string name="title_activity_fullscreen">全屏控制</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+</resources>
