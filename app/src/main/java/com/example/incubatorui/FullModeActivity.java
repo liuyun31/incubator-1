@@ -99,6 +99,8 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
     private double nLenStart;
     private double nLenEnd;
     int filter = 0;
+    Boolean responseFilterFlag = false;  //滤光片指令是否响应完成
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);//隐藏状态栏
@@ -660,36 +662,52 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                 break;
                 //4个判断哪个案件的事件，将需要的行走的部属与目的发送至指令线程
                 //filter是当前的位置，只存在4个值 0 16000 32000 48000
-                case R.id.btn_filter_1: filter = applicationUtil.getFilter();
-                                        if(filter != 0 ){
-                                            //不是0的话直接回退到原点
-                                            responseFilter("CMLC\r\n",0);
+                case R.id.btn_filter_1:
+                                        if (responseFilterFlag == false){
+                                            responseFilterFlag = true;
+                                            filter = applicationUtil.getFilter();
+                                            if(filter != 0 ){
+                                                //不是0的话直接回退到原点
+                                                responseFilter("CMLC\r\n",0);
+                                            }
                                         }break;
-                case R.id.btn_filter_2: filter = applicationUtil.getFilter();
-                                        if(filter == 16000)break;//当前位置不需要移动
-                                        if(filter > 16000){//如果是32000 或者 48000 就前进差值
-                                            responseFilter("CMM4F="+(filter-16000)+"\r\n",16000);
-                                        }else {
+
+                case R.id.btn_filter_2:
+                                    if (responseFilterFlag == false) {
+                                        responseFilterFlag = true;
+                                        filter = applicationUtil.getFilter();
+                                        if (filter == 16000) break;//当前位置不需要移动
+                                        if (filter > 16000) {//如果是32000 或者 48000 就前进差值
+                                            responseFilter("CMM4F=" + (filter - 16000) + "\r\n", 16000);
+                                        } else {
                                             //如果在0则前进16000
-                                            responseFilter("CMM4Z="+(filter+16000)+"\r\n",16000);
+                                            responseFilter("CMM4Z=" + (filter + 16000) + "\r\n", 16000);
                                         }
-                                        break;
-                case R.id.btn_filter_3: filter = applicationUtil.getFilter();
+                                    }break;
+
+                case R.id.btn_filter_3:
+                                    if (responseFilterFlag == false) {
+                                        responseFilterFlag = true;
+                                        filter = applicationUtil.getFilter();
                                         if(filter == 32000)break;//当前位置不需要移动
                                         if(filter > 32000){//如果48000 就回退48000-32000 == 16000
                                             responseFilter("CMM4F="+(filter-32000)+"\r\n",32000);
                                         }else {
                                             //如果是16000 或者 32000 就前进差值
                                             responseFilter("CMM4Z="+(32000-filter)+"\r\n",32000);
-                                        }break;
-                case R.id.btn_filter_4: filter = applicationUtil.getFilter();
-                                        if(filter != 48000){
-                                            //不是48000就前进差值
-                                            responseFilter("CMM4Z="+(48000-filter)+"\r\n",48000);
                                         }
+                                }break;
 
+                case R.id.btn_filter_4:
+                                if (responseFilterFlag == false) {
+                                    responseFilterFlag = true;
+                                    filter = applicationUtil.getFilter();
+                                    if(filter != 48000){
+                                        //不是48000就前进差值
+                                        responseFilter("CMM4Z="+(48000-filter)+"\r\n",48000);
+                                    }
+                                }break;
 
-                break;
             default:break;
         }
     }
@@ -707,6 +725,7 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+
     public void responseFilter(String z,int setFilter){
         applicationUtil.setFilter(setFilter);
         MyThread thread = new MyThread(z,setFilter){
@@ -718,11 +737,12 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                 while (true){
                     if (filter.getIsGo() == 2){
                         showToast("指令响应失败");
+                        responseFilterFlag = false;
                         return;
                     }else {
                         if(filter.getIsGo() == 1){
                             System.out.println("指令响应成功");
-
+                            responseFilterFlag = false;
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
