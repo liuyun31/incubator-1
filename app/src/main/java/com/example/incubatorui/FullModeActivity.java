@@ -731,7 +731,7 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
 
 
     public void responseFilter(String z,int setFilter){
-        applicationUtil.setFilter(setFilter);
+
         MyThread thread = new MyThread(z,setFilter){
             @Override
             public void run() {
@@ -746,6 +746,7 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                     }else {
                         if(filter.getIsGo() == 1){
                             System.out.println("指令响应成功");
+                            applicationUtil.setFilter(setFilter);
                             responseFilterFlag = false;
                             runOnUiThread(new Runnable() {
                                 @Override
