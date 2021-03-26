@@ -536,6 +536,10 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                         btnFullBack.setVisibility(VISIBLE);
                 break;
             case R.id.btnFocal://微调
+                if(llLamplightControl.getVisibility() == VISIBLE) {
+                    llLamplightControl.setVisibility(View.GONE);
+                    llVisionControl.setVisibility(VISIBLE);
+                 }
                 if(btnFocal.getVisibility() == VISIBLE){//如果是隐藏占位就
                     // 改成显示
                     llFocalFilter.setVisibility(View.GONE);
