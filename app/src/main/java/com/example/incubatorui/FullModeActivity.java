@@ -736,7 +736,7 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void run() {
                 applicationUtil.sendMessageF(z);
-                Response filter = new Response(applicationUtil,150);
+                Response filter = new Response(applicationUtil,750);
                 filter.start();
                 while (true){
                     if (filter.getIsGo() == 2){
