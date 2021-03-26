@@ -237,7 +237,7 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                     }
 
                     //关闭所有灯光   指令：CMSCLR\r\n
-                    applicationUtil.sendMessageF("CMSCLR\\r\\n");//关闭所有灯
+                    applicationUtil.sendMessageF("CMSCLR\r\n");//关闭所有灯
                     Response closeAllLED = new Response(applicationUtil,150);
                     System.out.println("关闭所有灯***********************************************************************************");
                     closeAllLED.start();

@@ -31,7 +31,29 @@ public class CloseAllOldMNLed extends Thread{
             if(!applicationUtil.getTcpSendIs()){
                 showToast("不允许发送指令，关闭区域LED失败");
             }
-            //关闭红色LED
+            //关闭所有灯光   指令：CMSCLR\r\n
+            applicationUtil.sendMessageF("CMSCLR\r\n");//关闭所有灯
+            Response closeAllLED = new Response(applicationUtil,150);
+            System.out.println("关闭所有灯***********************************************************************************");
+            closeAllLED.start();
+            while (true){
+                if (closeAllLED.getIsGo() == 2){
+                    showToast("指令响应失败");
+                    return;
+                }else {
+                    if(closeAllLED.getIsGo() == 1){
+                        System.out.println("指令响应成功");
+                        applicationUtil.closeAlled();
+                        break;
+                    }
+                }
+                try {
+                    sleep(20);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            /*//关闭红色LED
             applicationUtil.sendMessageF("CMSRL"+m+"C"+n+"=0\r\n");//关闭
             Response rled1 = new Response(applicationUtil,150);
             rled1.start();
@@ -162,7 +184,7 @@ public class CloseAllOldMNLed extends Thread{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            }
+            }*/
 
         }catch (Exception e){
             e.printStackTrace();
