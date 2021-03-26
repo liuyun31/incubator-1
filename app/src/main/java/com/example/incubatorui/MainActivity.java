@@ -454,7 +454,7 @@ public class MainActivity extends AppCompatActivity {
                                 myThread.start();//启动线程
                 break;
             case ActivityFull:////////////////////////////////////////////==
-                                if(applicationUtil.getZeroIs() != 0){
+                                if(applicationUtil.getZeroIs() == 0){
                                     switchActivity = ActivityClient;
                                     Toast.makeText(this,"请进行初始化",Toast.LENGTH_SHORT).show();
                                     return;
