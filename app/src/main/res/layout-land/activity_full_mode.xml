@@ -510,36 +510,124 @@
                             </LinearLayout>
                             <LinearLayout
                                 android:id="@+id/llFocal_filter"
-                                android:layout_width="@dimen/dp_100"
-                                android:layout_height="@dimen/dp_180"
-                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
                                 android:visibility="gone"
-                                android:layout_marginLeft="@dimen/dp_180">
-                                <Button
-                                    android:id="@+id/btn_filter_Top"
-                                    android:layout_width="@dimen/dp_100"
-                                    android:layout_height="@dimen/dp_70"
-                                    android:background="@drawable/ic_focal_top">
-                                </Button>
-                                <TextView
-                                    android:layout_width="@dimen/dp_100"
-                                    android:layout_height="@dimen/dp_60"
-                                    android:layout_marginTop="-10dp"
-                                    android:layout_marginBottom="-10dp"
-                                    android:gravity="center"
-                                    android:textSize="@dimen/dp_18"
-                                    android:text="滤光片"
-                                    android:background="@drawable/ic_vision_centre">
+                                android:layout_marginLeft="@dimen/dp_180"
+                                >
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:background="@drawable/shape_filter_corner">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="3"
+                                        android:orientation="horizontal"
+                                        android:gravity="center"
+                                        android:paddingLeft="@dimen/dp_10"
+                                        android:paddingRight="@dimen/dp_10"
+                                        >
+                                        <Button
+                                            android:id="@+id/btn_filter_1"
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="@dimen/dp_50"
+                                            android:layout_marginRight="@dimen/dp_2"
+                                            android:layout_marginLeft="@dimen/dp_2"
+                                            android:textColor="@color/orange"
+                                            android:background="@drawable/button_circle_shape"
+                                            android:textSize="@dimen/dp_20"
+                                            android:text="一档" />
+                                        <Button
+                                            android:id="@+id/btn_filter_2"
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="@dimen/dp_50"
+                                            android:layout_marginRight="@dimen/dp_2"
+                                            android:layout_marginLeft="@dimen/dp_2"
+                                            android:textColor="@color/black_bai"
+                                            android:background="@drawable/button_circle_shape"
+                                            android:textSize="@dimen/dp_20"
+                                            android:text="二档" />
 
-                                </TextView>
-                                <Button
-                                    android:id="@+id/btn_filter_Bottom"
-                                    android:layout_width="@dimen/dp_100"
-                                    android:layout_height="@dimen/dp_70"
-                                    android:paddingTop="-10dp"
-                                    android:background="@drawable/ic_faocal_bottom">
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/dp_0"
+                                        android:layout_weight="2">
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:gravity="center"
+                                            android:textSize="@dimen/dp_22"
+                                            android:text="滤波片设置">
 
-                                </Button>
+                                        </TextView>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="3"
+                                        android:orientation="horizontal"
+                                        android:gravity="center"
+                                        android:paddingLeft="@dimen/dp_10"
+                                        android:paddingRight="@dimen/dp_10">
+
+                                        <Button
+                                            android:id="@+id/btn_filter_3"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/dp_2"
+                                            android:layout_marginRight="@dimen/dp_2"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/button_circle_shape"
+                                            android:text="三档"
+                                            android:textColor="@color/black_bai"
+                                            android:textSize="@dimen/dp_20" />
+                                        <Button
+                                            android:id="@+id/btn_filter_4"
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="@dimen/dp_50"
+                                            android:layout_marginRight="@dimen/dp_2"
+                                            android:layout_marginLeft="@dimen/dp_2"
+                                            android:textColor="@color/black_bai"
+                                            android:background="@drawable/button_circle_shape"
+                                            android:textSize="@dimen/dp_20"
+                                            android:text="四档" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
+<!--                                <Button-->
+<!--                                    android:id="@+id/btn_filter_Top"-->
+<!--                                    android:layout_width="@dimen/dp_100"-->
+<!--                                    android:layout_height="@dimen/dp_70"-->
+<!--                                    android:background="@drawable/ic_focal_top">-->
+<!--                                </Button>-->
+<!--                                <TextView-->
+<!--                                    android:layout_width="@dimen/dp_100"-->
+<!--                                    android:layout_height="@dimen/dp_60"-->
+<!--                                    android:layout_marginTop="-10dp"-->
+<!--                                    android:layout_marginBottom="-10dp"-->
+<!--                                    android:gravity="center"-->
+<!--                                    android:textSize="@dimen/dp_18"-->
+<!--                                    android:text="滤光片"-->
+<!--                                    android:background="@drawable/ic_vision_centre">-->
+
+<!--                                </TextView>-->
+<!--                                <Button-->
+<!--                                    android:id="@+id/btn_filter_Bottom"-->
+<!--                                    android:layout_width="@dimen/dp_100"-->
+<!--                                    android:layout_height="@dimen/dp_70"-->
+<!--                                    android:paddingTop="-10dp"-->
+<!--                                    android:background="@drawable/ic_faocal_bottom">-->
+
+<!--                                </Button>-->
+
                             </LinearLayout>
 
                         </LinearLayout>

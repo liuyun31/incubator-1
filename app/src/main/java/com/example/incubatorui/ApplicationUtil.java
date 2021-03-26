@@ -48,6 +48,8 @@ public class ApplicationUtil extends Application {
     int n = -1;
     int oldM = -1;
     int oldN = -1;
+    //滤光片位置
+    int filter = 0;
     //电机位置圈数和步数
     String XTotal = "0,0",YTotal = "0,0",ZTotal = "0,0";
     //下部状态
@@ -125,6 +127,14 @@ public class ApplicationUtil extends Application {
                 }
             }
         }
+    }
+
+    public int getFilter() {
+        return filter;
+    }
+
+    public void setFilter(int filter) {
+        this.filter = filter;
     }
 
     public Boolean getSocketIs()

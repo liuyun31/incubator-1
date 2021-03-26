@@ -63,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
     boolean upDataSensor = false;
 
     int sensorIsInit = 0;
+    //初始化按钮
     Button btnMainBegin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,8 +137,6 @@ public class MainActivity extends AppCompatActivity {
         btnMainBegin = findViewById(R.id.btn_MainBegin);
         btnMainBegin.setOnClickListener(new MyOnClickBegin(applicationUtil,context,activity));
     }
-
-
     /**
      * 打开关闭摄像头监听类
      */
@@ -454,7 +454,7 @@ public class MainActivity extends AppCompatActivity {
                                 myThread.start();//启动线程
                 break;
             case ActivityFull:////////////////////////////////////////////==
-                                if(applicationUtil.getZeroIs() != 0){
+                                if(applicationUtil.getZeroIs() == 0){
                                     switchActivity = ActivityClient;
                                     Toast.makeText(this,"请进行初始化",Toast.LENGTH_SHORT).show();
                                     return;

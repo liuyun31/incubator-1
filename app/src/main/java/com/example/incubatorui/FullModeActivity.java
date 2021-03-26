@@ -53,8 +53,12 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
     private Button btnArrowKeyBottom;
     private Button btnFocalTop;
     private Button btnFocalBottom;
-    private Button btnFilterTop;
-    private Button btnFilterBottom;
+//    private Button btnFilterTop;
+//    private Button btnFilterBottom;
+    private Button btnFilter1;
+    private Button btnFilter2;
+    private Button btnFilter3;
+    private Button btnFilter4;
     //灯光
     RadioGroup radioGRLed;
     RadioGroup radioGGLed;
@@ -94,6 +98,7 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
     //判断缩放手势
     private double nLenStart;
     private double nLenEnd;
+    int filter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);//隐藏状态栏
@@ -164,8 +169,10 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
 
         editTextFocalNum = findViewById(R.id.editText_Focal_num);
 
-        btnFilterTop = findViewById(R.id.btn_filter_Top);
-        btnFilterBottom = findViewById(R.id.btn_filter_Bottom);
+        btnFilter1 = findViewById(R.id.btn_filter_1);
+        btnFilter2 = findViewById(R.id.btn_filter_2);
+        btnFilter3 = findViewById(R.id.btn_filter_3);
+        btnFilter4 = findViewById(R.id.btn_filter_4);
 
         photoView = findViewById(R.id.photo_view);
         btnVideo = findViewById(R.id.btn_video);
@@ -196,10 +203,13 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
         btnArrowKeyBottom.setOnTouchListener(new MyOnTouchListener(applicationUtil,btnArrowKeyBottom.getId()));
         btnFocalTop.setOnTouchListener(new MyOnTouchListener(applicationUtil,btnFocalTop.getId()));
         btnFocalBottom.setOnTouchListener(new MyOnTouchListener(applicationUtil,btnFocalBottom.getId()));
-        btnFilterTop.setOnTouchListener(new MyOnTouchListener(applicationUtil,btnFilterTop.getId()));
-        btnFilterBottom.setOnTouchListener(new MyOnTouchListener(applicationUtil,btnFilterBottom.getId()));
+
 
         btnVideo.setOnClickListener(this);
+        btnFilter1.setOnClickListener(this);
+        btnFilter2.setOnClickListener(this);
+        btnFilter3.setOnClickListener(this);
+        btnFilter4.setOnClickListener(this);
     }
 
     class submitOnClickListener implements View.OnClickListener{
@@ -261,26 +271,27 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                     }else {
                         applicationUtil.sendMessageF("CMSRL"+m+"C"+n+"=1\r\n");//打开
                         R_is = 1;
-                    }
-                    Response rled1 = new Response(applicationUtil,150);
-                    rled1.start();
-                    while (true){
-                        if (rled1.getIsGo() == 2){
-                            showToast("指令响应失败");
-                            return;
-                        }else {
-                            if(rled1.getIsGo() == 1){
-                                System.out.println("指令响应成功");
-                                applicationUtil.setRgbIndex(m-1,n-1,0,R_is);
-                                break;
+                        Response rled1 = new Response(applicationUtil,150);
+                        rled1.start();
+                        while (true){
+                            if (rled1.getIsGo() == 2){
+                                showToast("指令响应失败");
+                                return;
+                            }else {
+                                if(rled1.getIsGo() == 1){
+                                    System.out.println("指令响应成功");
+                                    applicationUtil.setRgbIndex(m-1,n-1,0,R_is);
+                                    break;
+                                }
+                            }
+                            try {
+                                sleep(20);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
                             }
                         }
-                        try {
-                            sleep(20);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
                     }
+
                     //绿色led选择判断
                     //分析单选框结果,不是第一个就是第二个
                     RadioButton rb2 = (RadioButton)radioGGLed.getChildAt(0);
@@ -291,26 +302,27 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                     }else {
                         applicationUtil.sendMessageF("CMSGL"+m+"C"+n+"=1\r\n");//打开
                         G_is = 1;
-                    }
-                    Response rled2 = new Response(applicationUtil,150);
-                    rled2.start();
-                    while (true){
-                        if (rled2.getIsGo() == 2){
-                            showToast("指令响应失败");
-                            return;
-                        }else {
-                            if(rled2.getIsGo() == 1){
-                                System.out.println("指令响应成功");
-                                applicationUtil.setRgbIndex(m-1,n-1,1,G_is);
-                                break;
+                        Response rled2 = new Response(applicationUtil,150);
+                        rled2.start();
+                        while (true){
+                            if (rled2.getIsGo() == 2){
+                                showToast("指令响应失败");
+                                return;
+                            }else {
+                                if(rled2.getIsGo() == 1){
+                                    System.out.println("指令响应成功");
+                                    applicationUtil.setRgbIndex(m-1,n-1,1,G_is);
+                                    break;
+                                }
+                            }
+                            try {
+                                sleep(20);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
                             }
                         }
-                        try {
-                            sleep(20);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
                     }
+
                     //蓝色led选择判断
                     //分析单选框结果,不是第一个就是第二个
                     RadioButton rb3 = (RadioButton)radioGBLed.getChildAt(0);
@@ -321,24 +333,24 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                     }else {
                         applicationUtil.sendMessageF("CMSBL"+m+"C"+n+"=1\r\n");//打开
                         B_is = 1;
-                    }
-                    Response rled3 = new Response(applicationUtil,150);
-                    rled3.start();
-                    while (true){
-                        if (rled3.getIsGo() == 2){
-                            showToast("指令响应失败");
-                            return;
-                        }else {
-                            if(rled3.getIsGo() == 1){
-                                System.out.println("指令响应成功");
-                                applicationUtil.setRgbIndex(m-1,n-1,2,B_is);
-                                break;
+                        Response rled3 = new Response(applicationUtil,150);
+                        rled3.start();
+                        while (true){
+                            if (rled3.getIsGo() == 2){
+                                showToast("指令响应失败");
+                                return;
+                            }else {
+                                if(rled3.getIsGo() == 1){
+                                    System.out.println("指令响应成功");
+                                    applicationUtil.setRgbIndex(m-1,n-1,2,B_is);
+                                    break;
+                                }
                             }
-                        }
-                        try {
-                            sleep(20);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                            try {
+                                sleep(20);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                     //白色led选择判断
@@ -353,27 +365,27 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                         L_is = 0;
                     }else {
                         applicationUtil.sendMessageF("CMSWL"+m+"C"+n+"=1\r\n");//打开
-                        L_is = 1;
-                    }
-                    Response rled4 = new Response(applicationUtil,150);
-                    rled4.start();
-                    while (true){
-                        if (rled4.getIsGo() == 2){
-                            showToast("指令响应失败");
-                            return;
-                        }else {
-                            if(rled4.getIsGo() == 1){
-                                applicationUtil.setLED((m-1)*5+(n),L_is);
-                                System.out.println("指令响应成功");
-                                break;
+                        L_is = 1;Response rled4 = new Response(applicationUtil,150);
+                        rled4.start();
+                        while (true){
+                            if (rled4.getIsGo() == 2){
+                                showToast("指令响应失败");
+                                return;
+                            }else {
+                                if(rled4.getIsGo() == 1){
+                                    applicationUtil.setLED((m-1)*5+(n),L_is);
+                                    System.out.println("指令响应成功");
+                                    break;
+                                }
+                            }
+                            try {
+                                sleep(20);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
                             }
                         }
-                        try {
-                            sleep(20);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
                     }
+
                     //紫外灯1选择判断
                     //分析单选框结果,不是第一个就是第二个
                     if(m >= 4){//第4行没有紫外灯
@@ -390,26 +402,27 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                     }else {
                         applicationUtil.sendMessageF("CMSZL"+m+"C"+n+"=1\r\n");//打开
                         UV1_is = 1;
-                    }
-                    Response rled5 = new Response(applicationUtil,150);
-                    rled5.start();
-                    while (true){
-                        if (rled5.getIsGo() == 2){
-                            showToast("指令响应失败");
-                            return;
-                        }else {
-                            if(rled5.getIsGo() == 1){
-                                System.out.println("指令响应成功");
-                                applicationUtil.setUV1((m-1)*5+n,UV1_is);
-                                break;
+                        Response rled5 = new Response(applicationUtil,150);
+                        rled5.start();
+                        while (true){
+                            if (rled5.getIsGo() == 2){
+                                showToast("指令响应失败");
+                                return;
+                            }else {
+                                if(rled5.getIsGo() == 1){
+                                    System.out.println("指令响应成功");
+                                    applicationUtil.setUV1((m-1)*5+n,UV1_is);
+                                    break;
+                                }
+                            }
+                            try {
+                                sleep(20);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
                             }
                         }
-                        try {
-                            sleep(20);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
                     }
+
                     //紫外灯2选择判断
                     RadioButton rb6 = (RadioButton)radioGUV2Led.getChildAt(0);
                     int UV2_is;
@@ -419,24 +432,24 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                     }else {
                         applicationUtil.sendMessageF("CMSKL"+m+"C"+n+"=1\r\n");//打开
                         UV2_is = 1;
-                    }
-                    Response rled6 = new Response(applicationUtil,150);
-                    rled6.start();
-                    while (true){
-                        if (rled6.getIsGo() == 2){
-                            showToast("指令响应失败");
-                            return;
-                        }else {
-                            if(rled6.getIsGo() == 1){
-                                System.out.println("指令响应成功");
-                                applicationUtil.setUV2((m-1)*5+n,UV2_is);
-                                break;
+                        Response rled6 = new Response(applicationUtil,150);
+                        rled6.start();
+                        while (true){
+                            if (rled6.getIsGo() == 2){
+                                showToast("指令响应失败");
+                                return;
+                            }else {
+                                if(rled6.getIsGo() == 1){
+                                    System.out.println("指令响应成功");
+                                    applicationUtil.setUV2((m-1)*5+n,UV2_is);
+                                    break;
+                                }
                             }
-                        }
-                        try {
-                            sleep(20);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                            try {
+                                sleep(20);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 }
@@ -509,7 +522,8 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.  btn_video:applicationUtil.setVideo(false);
+            case R.id.btn_video:
+                applicationUtil.setVideo(false);
                         photoView.setVisibility(View.GONE);
                         imageView12.setVisibility(VISIBLE);
                         btnVideo.setVisibility(View.GONE);
@@ -580,6 +594,37 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btn_Focal_filtration:
                 if(llFocalFilter.getVisibility() == View.GONE){
+                    filter = applicationUtil.getFilter();
+                    System.out.println("///////////////////////////////////////////////////////////////" + filter);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            switch (filter){
+                                case 0:btnFilter1.setTextColor(getResources().getColor(R.color.orange));
+                                    btnFilter2.setTextColor(getResources().getColor(R.color.black_bai));
+                                    btnFilter3.setTextColor(getResources().getColor(R.color.black_bai));
+                                    btnFilter4.setTextColor(getResources().getColor(R.color.black_bai));
+                                    break;
+                                case 16000:btnFilter1.setTextColor(getResources().getColor(R.color.black_bai));
+                                    btnFilter2.setTextColor(getResources().getColor(R.color.orange));
+                                    btnFilter3.setTextColor(getResources().getColor(R.color.black_bai));
+                                    btnFilter4.setTextColor(getResources().getColor(R.color.black_bai));
+                                    break;
+                                case 32000:btnFilter1.setTextColor(getResources().getColor(R.color.black_bai));
+                                    btnFilter2.setTextColor(getResources().getColor(R.color.black_bai));
+                                    btnFilter3.setTextColor(getResources().getColor(R.color.orange));
+                                    btnFilter4.setTextColor(getResources().getColor(R.color.black_bai));
+                                    break;
+                                case 48000:btnFilter1.setTextColor(getResources().getColor(R.color.black_bai));
+                                    btnFilter2.setTextColor(getResources().getColor(R.color.black_bai));
+                                    btnFilter3.setTextColor(getResources().getColor(R.color.black_bai));
+                                    btnFilter4.setTextColor(getResources().getColor(R.color.orange));
+                                    break;
+                                default: System.out.println("720**********************************************************error");break;
+                            }
+
+                        }
+                    });
                     llFocalFilter.setVisibility(VISIBLE);
                     llFocalFocal.setVisibility(View.GONE);
                 }else {
@@ -613,11 +658,114 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                     Toast.makeText(this,"请输入一个大于零的正整数",Toast.LENGTH_SHORT).show();
                 }
                 break;
+
+                case R.id.btn_filter_1: filter = applicationUtil.getFilter();
+                                        if(filter != 0 ){
+                                            //applicationUtil.sendMessageF("CMM4F="+filter+"\r\n");
+                                            responseFilter("CMM4F="+filter+"\r\n",0);
+                                        }break;
+                case R.id.btn_filter_2: filter = applicationUtil.getFilter();
+                                        if(filter == 16000)break;
+                                        if(filter > 16000){
+                                            //applicationUtil.sendMessageF("CMM4F="+(filter-16000)+"\r\n");
+                                            responseFilter("CMM4F="+(filter-16000)+"\r\n",16000);
+                                        }else {
+                                            //applicationUtil.sendMessageF("CMM4Z="+(filter+16000)+"\r\n");
+                                            responseFilter("CMM4Z="+(filter+16000)+"\r\n",16000);
+                                        }
+                                        break;
+                case R.id.btn_filter_3: filter = applicationUtil.getFilter();
+                                        if(filter == 32000)break;
+                                        if(filter > 32000){
+                                            //applicationUtil.sendMessageF("CMM4F="+(filter-32000)+"\r\n");
+                                            responseFilter("CMM4F="+(filter-32000)+"\r\n",32000);
+                                        }else {
+                                            //applicationUtil.sendMessageF("CMM4Z="+(32000-filter)+"\r\n");
+                                            responseFilter("CMM4Z="+(32000-filter)+"\r\n",32000);
+                                        }break;
+                case R.id.btn_filter_4: filter = applicationUtil.getFilter();
+                                        if(filter != 48000){
+                                            //applicationUtil.sendMessageF("CMM4Z="+(48000-filter)+"\r\n");
+                                            responseFilter("CMM4Z="+(48000-filter)+"\r\n",48000);
+                                        }
+
+
+                break;
             default:break;
         }
     }
 
+    class MyThread extends Thread{
+        String z;
+        int setFilter;
+        public MyThread(String z,int setFilter){
+            this.z = z;
+            this.setFilter = setFilter;
+        }
+        @Override
+        public void run() {
+            super.run();
+        }
+    }
 
+    public void responseFilter(String z,int setFilter){
+        MyThread thread = new MyThread(z,setFilter){
+            @Override
+            public void run() {
+                applicationUtil.sendMessageF(z);
+                Response filter = new Response(applicationUtil,150);
+                filter.start();
+                while (true){
+                    if (filter.getIsGo() == 2){
+                        showToast("指令响应失败");
+                        return;
+                    }else {
+                        if(filter.getIsGo() == 1){
+                            System.out.println("指令响应成功");
+                            applicationUtil.setFilter(setFilter);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    switch (setFilter){
+                                        case 0:btnFilter1.setTextColor(getResources().getColor(R.color.orange));
+                                            btnFilter2.setTextColor(getResources().getColor(R.color.black_bai));
+                                            btnFilter3.setTextColor(getResources().getColor(R.color.black_bai));
+                                            btnFilter4.setTextColor(getResources().getColor(R.color.black_bai));
+                                            break;
+                                        case 16000:btnFilter1.setTextColor(getResources().getColor(R.color.black_bai));
+                                            btnFilter2.setTextColor(getResources().getColor(R.color.orange));
+                                            btnFilter3.setTextColor(getResources().getColor(R.color.black_bai));
+                                            btnFilter4.setTextColor(getResources().getColor(R.color.black_bai));
+                                            break;
+                                        case 32000:btnFilter1.setTextColor(getResources().getColor(R.color.black_bai));
+                                            btnFilter2.setTextColor(getResources().getColor(R.color.black_bai));
+                                            btnFilter3.setTextColor(getResources().getColor(R.color.orange));
+                                            btnFilter4.setTextColor(getResources().getColor(R.color.black_bai));
+                                            break;
+                                        case 48000:btnFilter1.setTextColor(getResources().getColor(R.color.black_bai));
+                                            btnFilter2.setTextColor(getResources().getColor(R.color.black_bai));
+                                            btnFilter3.setTextColor(getResources().getColor(R.color.black_bai));
+                                            btnFilter4.setTextColor(getResources().getColor(R.color.orange));
+                                            break;
+                                            default: System.out.println("720**********************************************************error");break;
+                                    }
+
+                                }
+                            });break;
+                        }
+                    }
+                    try {
+                        sleep(20);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        };
+        thread.start();
+
+    }
     /**
      * 由Application调用更新图片
      * @param bitmap
