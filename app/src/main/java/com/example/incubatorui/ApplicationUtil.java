@@ -293,13 +293,13 @@ public class ApplicationUtil extends Application {
     public void setX_int_total(int x_int_total) {
         X_int_total = x_int_total;
         int x =X_int_total;
-        if(x >= 3430){ n=1;
-            if(x>=6751){ n=2;
-                if(x>=9713){ n=3;
-                    if(x>=12854){ n=4;
-                        if(x>=15996){ n=5;
-                            if(x>=19137){ n=6;
-                                if(x > 22280){n=-1;
+        if(x >= 42400){ n=1;
+            if(x>=72267){ n=2;
+                if(x>=102133){ n=3;
+                    if(x>=131998){ n=4;
+                        if(x>=161885){ n=5;
+                            if(x>=191770){ n=6;
+                                if(x > 221600){n=-1;
                                 }
                             }
                         }
@@ -322,11 +322,11 @@ public class ApplicationUtil extends Application {
     public void setY_int_total(int y_int_total) {
         Y_int_total = y_int_total;
         int y = Y_int_total;
-        if(y >= 4272){ m=4;
-            if(y >= 15754){ m=3;
-                if(y >= 27237){ m=2;
-                    if(y >= 38719){ m=1;
-                        if(y > 50202){m=-1;
+        if(y >= 13800){ m=4;
+            if(y >= 43650){ m=3;
+                if(y >= 73500){ m=2;
+                    if(y >= 103350){ m=1;
+                        if(y > 133200){m=-1;
                         }
                     }
                 }
@@ -342,13 +342,13 @@ public class ApplicationUtil extends Application {
     public void setX_Y_int_total(int x_int_total,int y_int_total) {
         X_int_total = x_int_total;
         int x =X_int_total;
-        if(x >= 3430){ n=1;
-            if(x>=6751){ n=2;
-                if(x>=9713){ n=3;
-                    if(x>=12854){ n=4;
-                        if(x>=15996){ n=5;
-                            if(x>=19137){ n=6;
-                                if(x > 22280){n=-1;
+        if(x >= 42400){ n=1;
+            if(x>=72267){ n=2;
+                if(x>=102133){ n=3;
+                    if(x>=131998){ n=4;
+                        if(x>=161885){ n=5;
+                            if(x>=191770){ n=6;
+                                if(x > 221600){n=-1;
                                 }
                             }
                         }
@@ -358,11 +358,11 @@ public class ApplicationUtil extends Application {
         }
         Y_int_total = y_int_total;
         int y = Y_int_total;
-        if(y >= 4272){ m=4;
-            if(y >= 15754){ m=3;
-                if(y >= 27237){ m=2;
-                    if(y >= 38719){ m=1;
-                        if(y > 50202){m=-1;
+        if(y >= 13800){ m=4;
+            if(y >= 43650){ m=3;
+                if(y >= 73500){ m=2;
+                    if(y >= 103350){ m=1;
+                        if(y > 133200){m=-1;
                         }
                     }
                 }

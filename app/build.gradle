@@ -22,7 +22,7 @@ android {
         variant ->
             variant.outputs.all {
                 //这里修改apk文件名
-                outputFileName = "incubatorui.apk"
+                outputFileName = "incubator0326.apk"
             }
     }
 }

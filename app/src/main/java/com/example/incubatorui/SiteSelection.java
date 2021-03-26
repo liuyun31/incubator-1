@@ -121,29 +121,38 @@ public class SiteSelection extends AppCompatActivity implements View.OnClickList
                 e.printStackTrace();
                 return;
             }
-            if(y >= 4272){ m=4;
-                if(y >= 15754){ m=3;
-                    if(y >= 27237){ m=2;
-                        if(y >= 38719){ m=1;
-                            if(y > 50202){m=-1;
+
+            /*
+            M  13800    43650  73500  103350  133200
+            N   42400   72267  102133 131998  161885   191770    221600
+             */
+            if(y >= 13800){ m=4;
+                if(y >= 43650){ m=3;
+                    if(y >= 73500){ m=2;
+                        if(y >= 103350){ m=1;
+                            if(y > 133200){m=-1;
                             }
                         }
                     }
                 }
+            }else{
+                m=-1;
             }
-            if(x >= 3430){ n=1;
-                if(x>=6751){ n=2;
-                    if(x>=9713){ n=3;
-                        if(x>=12854){ n=4;
-                            if(x>=15996){ n=5;
-                                if(x>=19137){ n=6;
-                                    if(x > 22280){n=-1;
+            if(x >= 42400){ n=1;
+                if(x>=72267){ n=2;
+                    if(x>=102133){ n=3;
+                        if(x>=131998){ n=4;
+                            if(x>=161885){ n=5;
+                                if(x>=191770){ n=6;
+                                    if(x > 221600){n=-1;
                                     }
                                 }
                             }
                         }
                     }
                 }
+            }else{
+                n=-1;
             }
             runOnUiThread(new Thread(){
                 @Override
