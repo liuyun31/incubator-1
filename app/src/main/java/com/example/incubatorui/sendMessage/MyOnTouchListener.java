@@ -90,12 +90,12 @@ public class MyOnTouchListener implements View.OnTouchListener  {
                         }
                     i=6;
                         break;
-                    case R.id.btn_filter_Top:
+                    /*case R.id.btn_filter_Top:
                         applicationUtil.sendMessageF("CMM4Z="+bushu+"\r\n");
                         break;
                     case R.id.btn_filter_Bottom:
                         applicationUtil.sendMessageF("CMM4F="+bushu+"\r\n");
-                        break;
+                        break;*/
                     default:break;
                 }
                 try {

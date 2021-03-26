@@ -63,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
     boolean upDataSensor = false;
 
     int sensorIsInit = 0;
+    //初始化按钮
     Button btnMainBegin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,8 +137,6 @@ public class MainActivity extends AppCompatActivity {
         btnMainBegin = findViewById(R.id.btn_MainBegin);
         btnMainBegin.setOnClickListener(new MyOnClickBegin(applicationUtil,context,activity));
     }
-
-
     /**
      * 打开关闭摄像头监听类
      */

@@ -166,7 +166,7 @@ public class MyOnClickBegin  implements View.OnClickListener{
                         } else {
                             if (r3.getIsGo() == 1) {
                                 System.out.println("指令响应成功");
-                                activity.runOnUiThread(new Runnable() {
+                                /*activity.runOnUiThread(new Runnable() {
                                     MainActivity mainActivity = (MainActivity)activity;
                                     @Override
                                     public void run() {
@@ -177,7 +177,7 @@ public class MyOnClickBegin  implements View.OnClickListener{
                                         mainActivity.upDataCoordinateMain();
                                         loadingDialog.loadSuccess();
                                     }
-                                });
+                                });*/
                                 break;
                             }
                         }
@@ -188,7 +188,7 @@ public class MyOnClickBegin  implements View.OnClickListener{
                         }
                     }
                     //滤光片归零
-                    /*applicationUtil.sendMessageF("CMLC\r\n");
+                    applicationUtil.sendMessageF("CMLC\r\n");
                     Response r4 = new Response(applicationUtil, 3000);
                     r4.start();
                     while (true) {
@@ -211,6 +211,7 @@ public class MyOnClickBegin  implements View.OnClickListener{
                                         applicationUtil.setY_int_total(0);
                                         applicationUtil.setZ_int_total(0);
                                         applicationUtil.setZeroIs(1);
+                                        applicationUtil.setFilter(0);
                                         mainActivity.upDataCoordinateMain();
                                         loadingDialog.loadSuccess();
                                     }
@@ -223,7 +224,7 @@ public class MyOnClickBegin  implements View.OnClickListener{
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                    }*/
+                    }
                 }
             }
         };
