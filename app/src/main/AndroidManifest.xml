@@ -26,11 +26,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LightControl"
+        <activity android:name=".LightControlActivity"
             android:screenOrientation="landscape">
         </activity>
         <activity
-            android:name=".SiteSelection"
+            android:name=".SiteSelectionActivity"
             android:screenOrientation="landscape">
             <meta-data
                 android:name="backgroundCulture"
@@ -39,8 +39,8 @@
         </activity> <!-- <meta-data -->
         <!-- android:name="com.google.android.actions" -->
         <!-- android:resource="@xml/shape_corner_down1" /> -->
-        <activity android:name=".BigImage" />
-        <activity android:name=".LookImage" />
+        <activity android:name=".BigImageActivity" />
+        <activity android:name=".LookImageActivity" />
         <activity
             android:name=".FullModeActivity"
             android:screenOrientation="landscape" />

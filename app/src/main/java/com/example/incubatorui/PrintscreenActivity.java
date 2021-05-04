@@ -31,6 +31,9 @@ import com.example.incubatorui.utils.ImageUtils.VerifyStoragePermissions;
 
 import java.io.File;
 
+/**
+ * 截图以及图片编辑
+ */
 public class PrintscreenActivity extends AppCompatActivity {
     private Bitmap bitmap;
     ApplicationUtil applicationUtil;
@@ -217,7 +220,7 @@ public class PrintscreenActivity extends AppCompatActivity {
                 Thread thread1  = (new Thread(){
                     @Override
                     public void run() {
-                        Intent it=new Intent(getApplicationContext(), LookImage.class);//启动FullModeActivity
+                        Intent it=new Intent(getApplicationContext(), LookImageActivity.class);//启动FullModeActivity
                         startActivity(it);
                     }
                 });

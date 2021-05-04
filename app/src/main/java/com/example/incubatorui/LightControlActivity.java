@@ -20,7 +20,12 @@ import com.example.incubatorui.lightControl.LightControlOnClickListener;
 import com.example.incubatorui.lightControl.MyOnClickRGB;
 import com.example.incubatorui.sendMessage.Response;
 
-public class LightControl extends AppCompatActivity {
+/**
+ * 灯光控制系统，可以控制任何一个灯
+ * 现在是只要控制摄像头位置的灯光
+ * 所以这个类目前不需要的，没有作用，
+ */
+public class LightControlActivity extends AppCompatActivity {
     Context context;
     public ApplicationUtil applicationUtil;
     LinearLayout linearLayout;

@@ -21,6 +21,9 @@ import com.example.incubatorui.sendMessage.SensorDataRequest;
 import com.example.incubatorui.utils.ImageUtils.VerifyStoragePermissions;
 import com.xiasuhuei321.loadingdialog.view.LoadingDialog;
 
+/**
+ * 主要页面
+ */
 public class MainActivity extends AppCompatActivity {
 
     public static final int ActivityClient = 0;//返回连接
@@ -444,7 +447,7 @@ public class MainActivity extends AppCompatActivity {
                                     public void run() {
                                         try{
                                             // sleep(3000);//使程序休眠五秒
-                                            Intent it=new Intent(getApplicationContext(),LookImage.class);//启动MainActivity
+                                            Intent it=new Intent(getApplicationContext(), LookImageActivity.class);//启动MainActivity
                                             startActivity(it);
                                         }catch (Exception e){
                                             e.printStackTrace();

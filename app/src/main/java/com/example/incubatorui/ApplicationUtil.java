@@ -18,17 +18,17 @@ public class ApplicationUtil extends Application {
     //App文件的根目录
     private static final String DNAME ="/incubator";
     //图片路径
-    private static final String PICTURE ="/picture";
+   // private static final String PICTURE ="/picture";
     private Socket socket;
     private DataOutputStream dos = null;
     private DataInputStream dis = null;
     private Boolean socketIs=false;
     private Bitmap allBitmap;
-    private PrintWriter out;
+    //private PrintWriter out;
     MainActivity mainActivity = null;
     FullModeActivity fullModeActivity = null;
     //存储本次进入app打开RGB灯的状态
-    private int[][][] rgb = new int[4][6][3];
+    private int[][][] rgb = new int[4][6][3];//分别是i行j列，rgb状态值
     //存储本次进入app打开紫外灯的状态
     private int[] UV1 = new int[16];
     private int[] UV2 = new int[16];

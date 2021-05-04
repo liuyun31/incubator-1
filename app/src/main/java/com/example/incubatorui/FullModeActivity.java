@@ -32,6 +32,9 @@ import com.example.incubatorui.utils.Printscreen;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
+/**
+ * 全屏界面
+ */
 public class FullModeActivity extends AppCompatActivity implements View.OnClickListener{
     Context context;
     private int  width;//屏幕宽度
@@ -568,7 +571,7 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                 Thread thread  = (new Thread(){
                     @Override
                     public void run() {
-                        Intent it=new Intent(getApplicationContext(), SiteSelection.class);//启动SiteSelection
+                        Intent it=new Intent(getApplicationContext(), SiteSelectionActivity.class);//启动SiteSelection
                         startActivity(it);
                         returnMain = false;
                         finish();
@@ -580,7 +583,7 @@ public class FullModeActivity extends AppCompatActivity implements View.OnClickL
                 Thread threadBtnLed  = (new Thread(){
                     @Override
                     public void run() {
-                        Intent it=new Intent(getApplicationContext(), LightControl.class);//启动MainActivity
+                        Intent it=new Intent(getApplicationContext(), LightControlActivity.class);//启动MainActivity
                         startActivity(it);
                     }
                 });

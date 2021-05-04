@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.example.incubatorui.ApplicationUtil;
 import com.example.incubatorui.R;
-import com.example.incubatorui.SiteSelection;
+import com.example.incubatorui.SiteSelectionActivity;
 import com.xiasuhuei321.loadingdialog.view.LoadingDialog;
 
 public class MyOnClickZero implements View.OnClickListener {
@@ -79,7 +79,7 @@ public class MyOnClickZero implements View.OnClickListener {
                                 default:break;
                             }
                             //更新UI坐标
-                            SiteSelection s = (SiteSelection)activity;
+                            SiteSelectionActivity s = (SiteSelectionActivity)activity;
                             s.upDataCoordinate();
                             //更新UI
                             activity.runOnUiThread(new Runnable() {

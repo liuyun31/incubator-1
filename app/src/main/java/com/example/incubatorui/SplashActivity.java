@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.incubatorui.utils.androidScreenAdaptation.ScreenUtils;
 
+/**
+ * 启动页面（放广告）
+ */
 public class SplashActivity extends AppCompatActivity {
     // private final int SPLASH_DISPLAY_LENGHT = 2000; // 两秒后进入系统
     @Override

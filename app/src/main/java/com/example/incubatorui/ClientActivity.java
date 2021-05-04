@@ -17,6 +17,9 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.incubatorui.utils.ImageUtils.VerifyStoragePermissions;
 
+/**
+ * 进来的链接界面
+ */
 public class ClientActivity extends AppCompatActivity {
 
     private TextView textIp;//ip地址输入框
