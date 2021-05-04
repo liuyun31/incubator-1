@@ -27,13 +27,16 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class LookImage extends AppCompatActivity implements View.OnClickListener {
+/**
+ * 查看所有图片
+ */
+public class LookImageActivity extends AppCompatActivity implements View.OnClickListener {
     LinearLayout llGroup = null;
     private Button bntBack;
     private Button bntDate;
     //所有图片数量
     int i;//当前图片位置
-    ;//图片地址集
+    //图片地址集
     boolean returnMain = true;//是否返回主页面（MainActivity）
 
     Calendar calendar= Calendar.getInstance(Locale.CHINA);
@@ -180,7 +183,7 @@ public class LookImage extends AppCompatActivity implements View.OnClickListener
                                     //将图片地址传过去显示
                                     intent.putExtra("path",path1);
                                     //System.out.println("放大图片的地址为："  + path1);
-                                    intent.setClass(getApplicationContext(),BigImage.class);
+                                    intent.setClass(getApplicationContext(), BigImageActivity.class);
                                     startActivity(intent);
                                     //关闭当前页面且不回MainActivity
                                     returnMain = false;

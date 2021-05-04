@@ -7,7 +7,7 @@ import android.view.View;
 import com.example.doodle.dialog.DialogController;
 import com.example.incubatorui.ApplicationUtil;
 import com.example.incubatorui.R;
-import com.example.incubatorui.SiteSelection;
+import com.example.incubatorui.SiteSelectionActivity;
 import com.xiasuhuei321.loadingdialog.view.LoadingDialog;
 
 public class MyOnClickABCD implements View.OnClickListener {
@@ -1338,7 +1338,7 @@ public class MyOnClickABCD implements View.OnClickListener {
                                                 System.out.println("指令响应成功");
                                                 applicationUtil.setX_Y_int_total(xz,yz);
                                                 //更新UI坐标
-                                                SiteSelection s = (SiteSelection)activity;
+                                                SiteSelectionActivity s = (SiteSelectionActivity)activity;
                                                 s.upDataCoordinate();
                                                 //更新UI
                                                 activity.runOnUiThread(new Runnable() {

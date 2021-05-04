@@ -17,7 +17,10 @@ import com.example.incubatorui.utils.ImageUtils.VerifyStoragePermissions;
 import java.io.File;
 import java.util.concurrent.ExecutionException;
 
-public class BigImage extends AppCompatActivity {
+/**
+ * 该类是从小图片转到图片放大后的视图
+ */
+public class BigImageActivity extends AppCompatActivity {
     private String pathImg;
     private final int returnLookImageActivity = 0;
     private final int returnPrintScreenActivity = 1;
@@ -111,7 +114,7 @@ public class BigImage extends AppCompatActivity {
                 Thread thread  = (new Thread(){
                     @Override
                     public void run() {
-                        Intent it=new Intent(getApplicationContext(), LookImage.class);//启动MainActivity
+                        Intent it=new Intent(getApplicationContext(), LookImageActivity.class);//启动MainActivity
                         startActivity(it);
                     }
                 });

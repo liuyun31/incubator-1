@@ -19,7 +19,10 @@ import com.example.incubatorui.sendMessage.MyOnClickABCD;
 import com.example.incubatorui.sendMessage.MyOnClickZero;
 import com.xiasuhuei321.loadingdialog.view.LoadingDialog;
 
-public class SiteSelection extends AppCompatActivity implements View.OnClickListener{
+/**
+ * 摄像头的位置选择，在全屏页面点坐标进入
+ */
+public class SiteSelectionActivity extends AppCompatActivity implements View.OnClickListener{
     ApplicationUtil applicationUtil;
     private Context context;
     //区域定位
